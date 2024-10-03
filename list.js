@@ -1,6 +1,7 @@
 
 const monsters = 
 [
+    {cardType: "Monster", cardName: "CELTIC GUARDIAN"},
     {cardType: "Monster/Effect", cardName: "CYBER JAR"},
     {cardType: "Monster/Effect", cardName: "DREAM CLOWN"},
     {cardType: "Monster/Effect", cardName: "JINZO"},
@@ -57,6 +58,11 @@ const monsters =
     {cardType: "Monster/Effect", cardName: "DESTINY HERO - MALICIOUS"},
     {cardType: "Monster/Effect", cardName: "ORCUST KNIGHTMARE"},
     {cardType: "Monster/Effect", cardName: "WHITE DRAGON WYVERBURSTER"},
+    {cardType: "Monster/Effect", cardName: "ALEISTER THE INVOKER"},
+    {cardType: "Monster/Effect", cardName: "PSY-FRAMEGEAR GAMMA"},
+    {cardType: "Monster/Effect", cardName: "TEARLAMENTS MERRLI"},
+    {cardType: "Monster/Effect", cardName: "TEARLAMENTS HAVNIS"},
+    {cardType: "Monster/Effect", cardName: "ASH BLOSSOM & JOYOUS SPRING"},
     {cardType: "Monster/Fusion", cardName: "THOUSAND-EYES RESTRICT"},
     {cardType: "Monster/Fusion", cardName: "EL SHADDOLL CONSTRUCT"},
     {cardType: "Monster/Fusion", cardName: "GEM-KNIGHT SERAPHINITE"},
@@ -75,6 +81,7 @@ const monsters =
     {cardType: "Monster/XYZ", cardName: "TOADALLY AWESOME"},
     {cardType: "Monster/XYZ", cardName: "ZOODIAC DRIDENT"},
     {cardType: "Monster/XYZ", cardName: "NUMBER 41: BAGOOSKA THE TERRIBLY TIRED TAPIR"},
+    {cardType: "Monster/XYZ", cardName: "GIGANTIC SPRIGHT"},
     {cardType: "Monster/Link", cardName: "TOPOLOGIC BOMBER DRAGON"},
     {cardType: "Monster/Link", cardName: "KNIGHTMARE GOBLIN"},
     {cardType: "Monster/Link", cardName: "SKY STRIKER ACE - KAGARI"},
@@ -82,7 +89,8 @@ const monsters =
     {cardType: "Monster/Link", cardName: "BORRELSWORD DRAGON"},
     {cardType: "Monster/Link", cardName: "APOLLOUSA, BOW OF THE GODDESS"},
     {cardType: "Monster/Link", cardName: "UNCHAINED ABOMINATION"},
-    {cardType: "Monster/Link", cardName: "ACCESSCODE TALKER"}
+    {cardType: "Monster/Link", cardName: "ACCESSCODE TALKER"},
+    {cardType: "Monster/Link", cardName: "CRYSTRON HALQIFIBRAX"}
 ];
 
 const spells = 
@@ -128,7 +136,8 @@ const spells =
     {cardType: "Spell", cardName: "GOUKI RE-MATCH"},
     {cardType: "Spell", cardName: "FOOLISH BURIAL GOODS"},
     {cardType: "Spell", cardName: "CALLED BY THE GRAVE"},
-    {cardType: "Spell", cardName: "THE FORCEFUL SENTRY"}
+    {cardType: "Spell", cardName: "THE FORCEFUL SENTRY"},
+    {cardType: "Spell", cardName: "PRANK-KIDS PANDEMONIUM"}
 ];
 
 const traps = 
@@ -167,7 +176,9 @@ const traps =
     {cardType: "Trap", cardName: "TIME PENDULUMGRAPH"},
     {cardType: "Trap", cardName: "PALEOZOIC DINOMISCHUS"},
     {cardType: "Trap", cardName: "TRUE DRACO APOCALYPSE"},
-    {cardType: "Trap", cardName: "SUMMON LIMIT"}
+    {cardType: "Trap", cardName: "SUMMON LIMIT"},
+    {cardType: "Trap", cardName: "TRI-BRIGADE REVOLT"},
+    {cardType: "Trap", cardName: "GOZEN MATCH"}
 ];
 
 function loadTable(data){
@@ -175,6 +186,9 @@ function loadTable(data){
     data.forEach(element => {
         let row = table.insertRow();
         switch(element.cardType){
+            case "Monster":
+                row.className = "cardlist_monster";
+                break;
             case "Monster/Effect":
                 row.className = "cardlist_effect";
                 break;
@@ -210,8 +224,8 @@ function loadTable(data){
         remarks.innerHTML = "&nbsp;" //remarks
     });
 }
-document.getElementById('updated_date').innerHTML="Updated: 3/27/2024";
-document.getElementById('effective_date').innerHTML="Effective from March 27, 2024";
+document.getElementById('updated_date').innerHTML="Updated: 9/14/2024";
+document.getElementById('effective_date').innerHTML="Effective from September 14, 2024";
 loadTable(monsters);
 loadTable(spells);
 loadTable(traps);
